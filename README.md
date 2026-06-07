@@ -4,7 +4,7 @@
 
 ## 在线预览
 
-**当前预览地址**: [https://b3o2xhvd676g2.ok.kimi.link](https://b3o2xhvd676g2.ok.kimi.link)
+**当前预览地址**: [https://enterprise-website-template-nine.vercel.app/]
 
 > 建议自行部署到 Vercel / Netlify 以获得稳定访问，部署方法见下方「部署指南」。
 
