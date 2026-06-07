@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "name": "某某馆",
+      "subtitle": "Demo Pavilion",
+      "desc": "融合咖啡、会务、茶水于一体的商务文化空间。为入驻企业提供高品质的商务接待、会议洽谈、休闲交流场所，打造舒适优雅的商务文化氛围。",
+      "images": [
+        { "src": "/images/culture-1.jpg", "alt": "某某馆" },
+        { "src": "/images/culture-2.jpg", "alt": "馆内环境" }
+      ],
+      "tags": ["咖啡", "会务", "茶水"]
+    },
+    {
+      "name": "艺品馆",
+      "subtitle": "Art Gallery",
+      "desc": "传承中华传统工艺，展示精美艺术品。将传统文化与现代商务空间相结合，为园区增添文化底蕴与艺术气息。",
+      "images": [
+        { "src": "/images/culture-2.jpg", "alt": "艺品馆" },
+        { "src": "/images/culture-1.jpg", "alt": "艺术展示" }
+      ],
+      "tags": ["传统工艺", "文化展示", "艺术展览"]
+    }
+  ]
+}

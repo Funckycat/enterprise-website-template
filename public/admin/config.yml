@@ -1,0 +1,197 @@
+# 企业官网 - Decap CMS 配置
+# 使用说明：
+# 1. 修改下面 YOUR_USERNAME 为你的GitHub用户名
+# 2. 修改 YOUR_REPO 为你的仓库名
+# 3. 配置OAuth（见项目文档）
+
+backend:
+  name: github
+  repo: YOUR_USERNAME/YOUR_REPO
+  branch: main
+
+# 媒体文件上传路径
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# 网站基础URL（用于预览）
+site_url: https://www.example-group.cn
+
+# 编辑集合
+collections:
+  # ========== 董事长介绍 ==========
+  - name: "chairman"
+    label: "董事长介绍"
+    files:
+      - label: "董事长信息"
+        name: "chairman"
+        file: "public/content/chairman.json"
+        fields:
+          - { label: "姓名", name: "name", widget: "string" }
+          - { label: "职位", name: "position", widget: "string" }
+          - { label: "英文名/英文职位", name: "positionEn", widget: "string" }
+          - { label: "照片路径", name: "photo", widget: "image", default: "/images/chairman.png" }
+          - { label: "教育背景", name: "education", widget: "markdown" }
+          - label: "现任职务"
+            name: "positions"
+            widget: "list"
+            field: { label: "职务", name: "item", widget: "string" }
+          - label: "社会职务"
+            name: "socialPositions"
+            widget: "list"
+            field: { label: "职务", name: "item", widget: "string" }
+          - { label: "行业标准", name: "standards", widget: "markdown" }
+
+  # ========== 载体简介 ==========
+  - name: "carriers"
+    label: "载体简介"
+    files:
+      - label: "载体列表"
+        name: "carriers"
+        file: "public/content/carriers.json"
+        fields:
+          - label: "商汤生态港"
+            name: "sensetime"
+            widget: "object"
+            fields:
+              - { label: "名称", name: "name", widget: "string" }
+              - { label: "英文名", name: "subtitle", widget: "string" }
+              - { label: "公司名称", name: "company", widget: "string" }
+              - label: "标签"
+                name: "tags"
+                widget: "list"
+                field: { label: "标签", name: "tag", widget: "string" }
+              - { label: "详细介绍", name: "desc", widget: "markdown" }
+              - label: "数据指标"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "数值", name: "v", widget: "string" }
+                  - { label: "标签", name: "l", widget: "string" }
+
+          - label: "临港嘉定科技城"
+            name: "lingang"
+            widget: "object"
+            fields:
+              - { label: "名称", name: "name", widget: "string" }
+              - { label: "英文名", name: "subtitle", widget: "string" }
+              - { label: "公司名称", name: "company", widget: "string" }
+              - label: "标签"
+                name: "tags"
+                widget: "list"
+                field: { label: "标签", name: "tag", widget: "string" }
+              - { label: "详细介绍", name: "desc", widget: "markdown" }
+              - label: "数据指标"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "数值", name: "v", widget: "string" }
+                  - { label: "标签", name: "l", widget: "string" }
+
+          - label: "多礼米创业孵化基地"
+            name: "duolimi"
+            widget: "object"
+            fields:
+              - { label: "名称", name: "name", widget: "string" }
+              - { label: "英文名", name: "subtitle", widget: "string" }
+              - { label: "公司名称", name: "company", widget: "string" }
+              - label: "标签"
+                name: "tags"
+                widget: "list"
+                field: { label: "标签", name: "tag", widget: "string" }
+              - { label: "详细介绍", name: "desc", widget: "markdown" }
+              - label: "数据指标"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "数值", name: "v", widget: "string" }
+                  - { label: "标签", name: "l", widget: "string" }
+
+          - label: "融园"
+            name: "rongyuan"
+            widget: "object"
+            fields:
+              - { label: "名称", name: "name", widget: "string" }
+              - { label: "英文名", name: "subtitle", widget: "string" }
+              - { label: "公司名称", name: "company", widget: "string" }
+              - label: "标签"
+                name: "tags"
+                widget: "list"
+                field: { label: "标签", name: "tag", widget: "string" }
+              - { label: "详细介绍", name: "desc", widget: "markdown" }
+              - label: "数据指标"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "数值", name: "v", widget: "string" }
+                  - { label: "标签", name: "l", widget: "string" }
+
+  # ========== 孵化器 ==========
+  - name: "incubators"
+    label: "孵化器"
+    files:
+      - label: "孵化器列表"
+        name: "incubators"
+        file: "public/content/incubators.json"
+        fields:
+          - label: "孵化器列表"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "名称", name: "name", widget: "string" }
+              - { label: "英文名", name: "subtitle", widget: "string" }
+              - { label: "详细介绍", name: "desc", widget: "markdown" }
+              - { label: "图片路径", name: "image", widget: "image" }
+              - label: "数据指标"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "数值", name: "v", widget: "string" }
+                  - { label: "标签", name: "l", widget: "string" }
+
+  # ========== 商旅文化 ==========
+  - name: "culture"
+    label: "商旅文化"
+    files:
+      - label: "场馆列表"
+        name: "culture"
+        file: "public/content/culture.json"
+        fields:
+          - label: "场馆列表"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "名称", name: "name", widget: "string" }
+              - { label: "英文名", name: "subtitle", widget: "string" }
+              - { label: "详细介绍", name: "desc", widget: "markdown" }
+              - label: "标签"
+                name: "tags"
+                widget: "list"
+                field: { label: "标签", name: "tag", widget: "string" }
+
+  # ========== 公司信息 & 发展历程 ==========
+  - name: "company"
+    label: "公司信息"
+    files:
+      - label: "公司信息"
+        name: "company"
+        file: "public/content/company.json"
+        fields:
+          - { label: "公司全称", name: "fullName", widget: "string" }
+          - { label: "公司简介第一段", name: "intro1", widget: "markdown" }
+          - { label: "公司简介第二段", name: "intro2", widget: "markdown" }
+          - label: "荣誉标签"
+            name: "honors"
+            widget: "list"
+            field: { label: "荣誉", name: "item", widget: "string" }
+          - label: "发展历程"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "阶段", name: "phase", widget: "string" }
+              - { label: "时期", name: "period", widget: "string" }
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "详情", name: "detail", widget: "string" }
+              - label: "项目"
+                name: "projects"
+                widget: "list"
+                field: { label: "项目名", name: "item", widget: "string" }

@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 10%;
+    --radius: 0.5rem;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #111111;
+    background: #FFFFFF;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: #111111;
+    color: #FFFFFF;
+  }
+}
+
+@property --num {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+
+.rolling-number {
+  font-family: "Inter", monospace;
+  font-weight: 200;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #FFFFFF;
+  counter-reset: num var(--num);
+  transition: --num 2.5s ease-out;
+}
+.rolling-number::after {
+  content: counter(num);
+}
+.target-4000 { --target: 4000; transition-duration: 3.5s; }
+.target-12   { --target: 12;   transition-duration: 2.5s; }
+.target-200   { --target: 200;  transition-duration: 2.8s; }
+.in-view.target-4000,
+.in-view.target-12,
+.in-view.target-200 {
+  --num: var(--target);
+}
