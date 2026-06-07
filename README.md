@@ -42,10 +42,10 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git clone https://github.com/Funckycat/enterprise-website-template.git
 
 # 进入项目目录
-cd YOUR_REPO
+cd enterprise-website-template
 
 # 安装依赖
 npm install
@@ -104,8 +104,6 @@ npm run preview
 - 配置文件：`public/admin/config.yml`
 - 内容数据：`public/content/*.json`
 - 媒体上传：`public/images/uploads/`
-
-**使用前需修改**：将 `config.yml` 中的 `YOUR_USERNAME/YOUR_REPO` 替换为你的 GitHub 用户名和仓库名。
 
 ## 部署指南
 
